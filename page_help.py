@@ -17,6 +17,6 @@ def main(title=None, kwargs=None):
                     readme_buffer.clear()
         st.markdown(' '.join(readme_buffer))
     
-    st.markdown('#### Demo')
+    st.markdown('#### Quick demo')
     with st.expander('Open...', expanded=False):
         st.image('https://raw.githubusercontent.com/asehmi/sweetviz_analysis/main/images/sweetviz-analysis-demo.gif')

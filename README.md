@@ -18,4 +18,13 @@ This is a lightweight EDA application using Sweetviz to create beautiful, high-d
 
   `> run.cmd`
 
+### Try the app yourself
+
+The application can be viewed in the Streamlit Cloud at the link below:
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://sweetviz.streamlit.app/)
+
+
 Enjoy!
+
+Arvindra
