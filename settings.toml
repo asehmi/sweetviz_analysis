@@ -1,2 +1,2 @@
-ST_STATIC_PATH = "./static"
+ST_STATIC_PATH = "/app/static"
 DATA_PATH = "./data"
