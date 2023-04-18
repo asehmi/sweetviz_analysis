@@ -8,3 +8,4 @@ Markdown
 debugpy
 sweetviz==2.1.4
 toml
+openpyxl
