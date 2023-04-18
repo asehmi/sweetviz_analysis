@@ -1,0 +1,2 @@
+ST_STATIC_PATH = "./static"
+DATA_PATH = "./data"

@@ -1,0 +1,10 @@
+streamlit
+numpy
+pandas
+plotly
+plotly_express
+requests
+markdown
+debugpy
+sweetviz
+toml
