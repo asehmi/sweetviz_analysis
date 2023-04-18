@@ -46,6 +46,7 @@ def main(title=None, kwargs=None):
     st.title(title)
 
     st.sidebar.header('⚙️ Settings')
+    show_data = st.sidebar.checkbox('📦 Show data table', value=False)
     if st.sidebar.button('🧹 Clear data cache', type='primary'):
         load_data.clear()
         get_sv_page.clear()
@@ -82,12 +83,13 @@ def main(title=None, kwargs=None):
     reader = data_map[data_set].get('reader', pd.read_csv)
     skip_columns = data_map[data_set].get('skip_columns', [])
 
-    st.subheader(f'Data ({data_set})')
-    if description:
-        st.caption(description)
-
     df = load_data(source, reader)
-    st.write(df.head())
+
+    if show_data:
+        st.subheader(f'Data ({data_set})')
+        if description:
+            st.caption(description)
+        st.write(df.head())
 
     st.subheader(f'Dashboard ({data_set})')
     src = get_sv_page(data_set, df, skip_columns)

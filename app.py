@@ -19,7 +19,7 @@ def main():
     st.sidebar.header('📑 Menu')
     pages = {
         '🍭 Sweet Visualization':  [viz.main, []],     # VIZ PAGE
-        '🙊 Dummy App':            [dummy.main, []],   # DUMMY PAGE
+        '🙊 Dummy Page':           [dummy.main, []],   # DUMMY PAGE
         '🆘 Help':                 [help.main, []],    # HELP PAGE
     }
 
@@ -35,7 +35,7 @@ def main():
 if __name__ == '__main__':
     st.sidebar.image('./images/a12i_logo.png', output_format='png')
 
-    c1, _ = st.columns([1, 2])
+    c1, _ = st.columns([2, 3])
     with c1:
         main()
 

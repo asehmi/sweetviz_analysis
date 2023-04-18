@@ -8,7 +8,7 @@ def main(title=None, kwargs=None):
     capability = st.sidebar.radio('Select app capability', capabilities.keys())
     action = capabilities[capability]
 
-    st.write(f'## Welcome to the app that does {action}! {capability[-1]}')
+    st.write(f'## Welcome to the page that does {action}! {capability[0]}')
 
     # Example public API call
     if capabilities[capability] == 'something':

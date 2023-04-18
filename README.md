@@ -2,6 +2,8 @@
 
 This is a lightweight EDA application using Sweetviz to create beautiful, high-density visualizations for EDA (Exploratory Data Analysis) in Streamlit.
 
+![Sweetviz Screenshot](./images/screenshot.png)
+
 #### Running this app
 
 * Install package requirements:
