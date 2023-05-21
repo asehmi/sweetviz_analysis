@@ -97,9 +97,9 @@ def main(title=None, kwargs=None):
     except Exception as e:
         st.error(f'Error generating SweetViz report: {e}')
         st.info(
-            '*UPDATE: 21 May 2023*\n\n'
+            '**UPDATE: 21 May 2023**\n\n'
             'Streamlit Cloud does not support the SweetViz library as it forces installation of Pandas v2 and SweetViz requires Pandas v1.\n\n'
-            'Please replicate the GitHub repo and use the local version of this app instead.'
+            'Please replicate the [GitHub repo](https://github.com/asehmi/sweetviz_analysis) and use the local version of this app instead.'
         )
         return
 
