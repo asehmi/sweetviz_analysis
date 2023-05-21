@@ -19,13 +19,13 @@ DATA_PATH = settings['DATA_PATH']
 # ST_STATIC_PATH = "./static"
 # DATA_PATH = "./data"
 
-# @st.cache_data(show_spinner="Fetching data")
+@st.cache_data(show_spinner="Fetching data")
 # _reader is ignored by cache_data decorator
 def load_data(source, _reader=pd.read_csv):
     df = _reader(f'{DATA_PATH}/{source}')
     return df
 
-# @st.cache_data(show_spinner="Generating SweetViz report")
+@st.cache_data(show_spinner="Generating SweetViz report")
 def get_sv_page(data_set, df, skip_columns=[]):
     sv.config_parser.read('sweetviz.ini')
     name = data_set.replace(' ', '_')
@@ -47,9 +47,9 @@ def main(title=None, kwargs=None):
 
     st.sidebar.header('⚙️ Settings')
     show_data = st.sidebar.checkbox('📦 Show data table', value=False)
-    # if st.sidebar.button('🧹 Clear data cache', type='primary'):
-        # load_data.clear()
-        # get_sv_page.clear()
+    if st.sidebar.button('🧹 Clear data cache', type='primary'):
+        load_data.clear()
+        get_sv_page.clear()
 
     data_map = {
         'Time Series': {
@@ -92,6 +92,15 @@ def main(title=None, kwargs=None):
         st.write(df.head())
 
     st.subheader(f'Dashboard ({data_set})')
-    src = get_sv_page(data_set, df, skip_columns)
+    try:
+        src = get_sv_page(data_set, df, skip_columns)
+    except Exception as e:
+        st.error(f'Error generating SweetViz report: {e}')
+        st.info(
+            '*UPDATE: 21 May 2023*\n\n'
+            'Streamlit Cloud does not support the SweetViz library as it forces installation of Pandas v2 and SweetViz requires Pandas v1.\n\n'
+            'Please replicate the GitHub repo and use the local version of this app instead.'
+        )
+        return
 
     components.iframe(src=src, width=1100, height=1200, scrolling=True)
