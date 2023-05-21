@@ -6,6 +6,8 @@ This is a lightweight EDA application using Sweetviz to create beautiful, high-d
 
 #### Running this app
 
+* Replicate the [GitHub repo](https://github.com/asehmi/sweetviz_analysis).
+
 * Install package requirements:
 
   `> pip install -r requirements.txt`
