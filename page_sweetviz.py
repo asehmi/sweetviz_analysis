@@ -25,7 +25,7 @@ def load_data(source, _reader=pd.read_csv):
     df = _reader(f'{DATA_PATH}/{source}')
     return df
 
-# @st.cache_data(show_spinner="Generating SweetViz report")
+@st.cache_data(show_spinner="Generating SweetViz report")
 def get_sv_page(data_set, df, skip_columns=[]):
     sv.config_parser.read('sweetviz.ini')
     name = data_set.replace(' ', '_')
