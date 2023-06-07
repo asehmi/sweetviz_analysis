@@ -1,6 +1,7 @@
 streamlit==1.22.0
-altair==4.1.0
+altair==4.2.0
 pandas==1.4.3
+numpy==1.22.3
 sweetviz==2.1.4
 toml==0.10.2
 openpyxl
