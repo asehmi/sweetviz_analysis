@@ -1,4 +1,4 @@
-streamlit==1.19.0
+streamlit>=1.23.0
 pandas==1.4.3
 sweetviz==2.1.4
 toml==0.10.2
